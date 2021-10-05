@@ -2,6 +2,24 @@
 {% load static %}
 
 {%block content%}
-<h1>Hello from home page</h1> 
+<h2>Alumnos</h2> 
+<table id="table-style">
+    <tr>
+        <td>Id</td>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Calificaciones</td>
+        <td>Eliminar</td>
+    </tr>
+    {% for alumno in alumnos%}
+        <tr>
+            <th>{{alumno.id}}</th>
+            <th>{{alumno.first_name}}</th>
+            <th>{{alumno.last_name}}</th>
+            <th><a href="#">Editar</a></th>
+            <th>{{alumno.id}}</th>
+        </tr>
+    {% endfor %}
+</table>
 {% comment %} <img src="{% static 'images/shinobu.jpg'%}" {% endcomment %}
 {% endblock %}
