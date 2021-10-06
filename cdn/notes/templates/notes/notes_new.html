@@ -1,0 +1,34 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+<form action="" method="POST">
+    <h5 class="card-title">Alumno: {{data.alumno}}</h5>
+    {% csrf_token %}
+    <select class="form-select mb-3" aria-label="Default select example" name="select" id="id_select">
+        {% for item in select_list%}
+            <option value={{item.key}} selected="">{{item.value}}</option>
+        {% endfor %}
+    </select>
+    <div class="input-group mb-3">
+        <span class="input-group-text">U1</span>
+        <input type="number" value=0 id='u1' name='u1' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">U2</span>
+        <input type="number" value=0 id='u2' name='u2' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">U3</span>
+        <input type="number" value=0 id='u3' name='u3' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">U4</span>
+        <input type="number" value=0 id='u4' name='u4' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">U5</span>
+        <input type="number" value=0 id='u5' name='u5' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <input class='btn btn-primary' type="submit" value="Agregar"/>
+</form>
+{% endblock %}

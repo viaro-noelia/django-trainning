@@ -4,9 +4,9 @@
 {%block content%}
 <div class="title-container">
 <h2>Alumnos</h2>
-<button id="imprimir" class='btn'>Print me</button>
-<a href="{% url 'alumnocreate' %}"><button class="btn">Agregar Alumno</button></a>
+<button id="imprimir" class='btn btn-secondary'>Imprimir</button>
 </div>
+<div class='hide-scroll' style="width: 100%; overflow: scroll;">
 <table id='general-table' style="width: 100%;">
     <tr style="color: white;">
         <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Nombre</th>
@@ -20,7 +20,13 @@
         <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Estado</th>
     </tr>
     {% for alumno in alumnos%}
-        <tr>
+        {% if alumno.promedio < 55 %}
+            <tr style="background-color: #dc3545; color: white;">
+        {% elif alumno.promedio > 75%}
+            <tr>
+        {% else %}
+            <tr style="background-color: #0d6efd; color: white;">
+        {% endif %}
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.name}}</td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.clase}}</td>
             <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.u1}}</td>
@@ -33,5 +39,6 @@
         </tr>
     {% endfor %}
 </table>
+</div>
 {% comment %} <img src="{% static 'images/shinobu.jpg'%}" {% endcomment %}
 {% endblock %}

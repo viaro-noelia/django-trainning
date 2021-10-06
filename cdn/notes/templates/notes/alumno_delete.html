@@ -6,7 +6,7 @@
     <div>
         {% csrf_token %}
         <p>Estas seguro de eliminar el siguiente alumno: "{{ object }}"?</p>
-        <input class='btn' type="submit" value="Confirm" />
+        <input class='btn btn-danger' type="submit" value="Eliminar" />
     </div>
 </form>
 {% endblock %}

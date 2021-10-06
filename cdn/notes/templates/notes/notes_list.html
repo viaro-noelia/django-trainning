@@ -3,35 +3,46 @@
 
 {%block content%}
 <div class="title-container">
-    <h2>Alumno: {{name}} </h2> 
-    <a href="{% url 'notescreate' %}"><button class="btn">Agregar Materia</button></a>
+    <h3>Alumno: {{name}} </h3> 
+    <a href="{% url 'notesnew' alumno_id %}"><button class="btn btn-primary">Agregar Materia</button></a>
 </div>
+<div class='hide-scroll' style="width: 100%; overflow: scroll;">
 <table id="printTable">
     <tr>
-        <th>Materia</th>
-        <th>Unidad 1</th>
-        <th>Unidad 2</th>
-        <th>Unidad 3</th>
-        <th>Unidad 4</th>
-        <th>Unidad 5</th>
-        <th>Promedio</th>
-        <th>Estado</th>
-        <th>Editar</th>
+        <th style="min-width: 100px;">Materia</th>
+        <th style="min-width: 100px;">Unidad 1</th>
+        <th style="min-width: 100px;">Unidad 2</th>
+        <th style="min-width: 100px;">Unidad 3</th>
+        <th style="min-width: 100px;">Unidad 4</th>
+        <th style="min-width: 100px;">Unidad 5</th>
+        <th style="min-width: 100px;">Promedio</th>
+        <th style="min-width: 100px;">Estado</th>
+        <th style="min-width: 100px;">Editar</th>
     </tr>
     {% for materia in materias%}
-        <tr>
+        {% if materia.promedio < 55 %}
+            <tr style="background-color: #dc3545; color: white;">
+        {% elif materia.promedio >= 75%}
+            <tr>
+        {% else %}
+            <tr style="background-color: #0d6efd; color: white;">
+        {% endif %}
             <td>{{materia.clase}}</td>
             <td>{{materia.u1}}</td>
             <td>{{materia.u2}}</td>
             <td>{{materia.u3}}</td>
             <td>{{materia.u4}}</td>
             <td>{{materia.u5}}</td>
-            
             <td>{{materia.promedio}}</td>
             <td>{{materia.status}}</td>
-            <td><a href="{% url 'notesupdate' materia.id %}"><button>Editar</button></a></td>
+            {% if materia.promedio >= 75%}
+                <td><a href="{% url 'notesedit' materia.id %}">Editar</a></td>
+            {% else %}
+                <td><a style="color:white;" href="{% url 'notesedit' materia.id %}">Editar</a></td>
+            {% endif %}
         </tr>
     {% endfor %}
 </table>
+</div>
 {% comment %} <img src="{% static 'images/shinobu.jpg'%}" {% endcomment %}
 {% endblock %}

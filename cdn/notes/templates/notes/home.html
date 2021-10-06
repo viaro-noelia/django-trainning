@@ -4,7 +4,7 @@
 {%block content%}
 <div class="title-container">
 <h2>Alumnos</h2> 
-<a href="{% url 'alumnocreate' %}"><button class="btn">Agregar Alumno</button></a>
+<a href="{% url 'alumnonew' %}"><button class="btn btn-primary">Agregar Alumno</button></a>
 </div>
 <table id="printTable" class='table-style'>
     <tr>
@@ -15,11 +15,11 @@
     </tr>
     {% for alumno in alumnos%}
         <tr>
-            <td>{{alumno.id}}</td>
+            <td>{{alumno.control}}</td>
             <td>{{alumno.name}}</td>
             {% comment %} <a href="{% url 'notesupdate' alumno.id %}"><button>Edit</button></a> {% endcomment %}
             <td><a href="{% url 'noteslist'  alumno.id %}">Mostrar</a></td>
-            <td><a href="{% url 'alumnodelete' alumno.id %}"><button>Delete</button></a></td>
+            <td><a href="{% url 'alumnodelete' alumno.id %}">Eliminar</a></td>
         </tr>
     {% endfor %}
 </table>
