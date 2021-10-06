@@ -1,0 +1,4 @@
+Collecting isort
+  Downloading https://files.pythonhosted.org/packages/c4/1d/f4e03047d6767e35c1efb13a280c1ef8b88807230f902da4cfc431a9f602/isort-5.9.3-py3-none-any.whl (106kB)
+Installing collected packages: isort
+Successfully installed isort-5.9.3

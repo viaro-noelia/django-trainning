@@ -1,7 +1,7 @@
 {% extends 'notes/base.html' %}
 {% load static %}
 
-{%block content%}
+{% block content %}
 <div class="title-container">
 <h2>Alumnos</h2> 
 <a href="{% url 'alumnonew' %}"><button class="btn btn-primary">Agregar Alumno</button></a>
@@ -13,15 +13,13 @@
         <th>Calificaciones</th>
         <th>Eliminar</th>
     </tr>
-    {% for alumno in alumnos%}
+    {% for alumno in alumnos %}
         <tr>
-            <td>{{alumno.control}}</td>
-            <td>{{alumno.name}}</td>
-            {% comment %} <a href="{% url 'notesupdate' alumno.id %}"><button>Edit</button></a> {% endcomment %}
+            <td>{{ alumno.control }}</td>
+            <td>{{ alumno.name }}</td>
             <td><a href="{% url 'noteslist'  alumno.id %}">Mostrar</a></td>
             <td><a href="{% url 'alumnodelete' alumno.id %}">Eliminar</a></td>
         </tr>
     {% endfor %}
 </table>
-{% comment %} <img src="{% static 'images/shinobu.jpg'%}" {% endcomment %}
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'notes/base.html' %}
 {% load static %}
 
-{%block content%}
+{% block content %}
 <div class="title-container">
 <h2>Alumnos</h2>
 <button id="imprimir" class='btn btn-secondary'>Imprimir</button>
@@ -19,7 +19,7 @@
         <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Promedio</th>
         <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Estado</th>
     </tr>
-    {% for alumno in alumnos%}
+    {% for alumno in alumnos %}
         {% if alumno.promedio < 55 %}
             <tr style="background-color: #dc3545; color: white;">
         {% elif alumno.promedio > 75%}
@@ -27,15 +27,15 @@
         {% else %}
             <tr style="background-color: #0d6efd; color: white;">
         {% endif %}
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.name}}</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.clase}}</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.u1}}</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.u2}}</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.u3}}</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.u4}}</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.u5}}</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.promedio}}</td>
-            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.status}}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ alumno.name }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ alumno.clase }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ alumno.u1 }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ alumno.u2 }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ alumno.u3 }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ alumno.u4 }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ alumno.u5 }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ alumno.promedio }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{ alumno.status }}</td>
         </tr>
     {% endfor %}
 </table>

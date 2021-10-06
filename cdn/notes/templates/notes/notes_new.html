@@ -2,11 +2,11 @@
 
 {% block content %}
 <form action="" method="POST">
-    <h5 class="card-title">Alumno: {{data.alumno}}</h5>
+    <h5 class="card-title">Alumno: {{ data.alumno }}</h5>
     {% csrf_token %}
     <select class="form-select mb-3" aria-label="Default select example" name="select" id="id_select">
         {% for item in select_list%}
-            <option value={{item.key}} selected="">{{item.value}}</option>
+            <option value={{ item.key }} selected="">{{ item.value }}</option>
         {% endfor %}
     </select>
     <div class="input-group mb-3">

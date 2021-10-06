@@ -1,9 +1,9 @@
 {% extends 'notes/base.html' %}
 {% load static %}
 
-{%block content%}
+{% block content %}
 <div class="title-container">
-    <h3>Alumno: {{name}} </h3> 
+    <h3>Alumno: {{ name }} </h3> 
     <a href="{% url 'notesnew' alumno_id %}"><button class="btn btn-primary">Agregar Materia</button></a>
 </div>
 <div class='hide-scroll' style="width: 100%; overflow: scroll;">
@@ -19,7 +19,7 @@
         <th style="min-width: 100px;">Estado</th>
         <th style="min-width: 100px;">Editar</th>
     </tr>
-    {% for materia in materias%}
+    {% for materia in materias %}
         {% if materia.promedio < 55 %}
             <tr style="background-color: #dc3545; color: white;">
         {% elif materia.promedio >= 75%}
@@ -27,15 +27,15 @@
         {% else %}
             <tr style="background-color: #0d6efd; color: white;">
         {% endif %}
-            <td>{{materia.clase}}</td>
-            <td>{{materia.u1}}</td>
-            <td>{{materia.u2}}</td>
-            <td>{{materia.u3}}</td>
-            <td>{{materia.u4}}</td>
-            <td>{{materia.u5}}</td>
-            <td>{{materia.promedio}}</td>
-            <td>{{materia.status}}</td>
-            {% if materia.promedio >= 75%}
+            <td>{{ materia.clase }}</td>
+            <td>{{ materia.u1 }}</td>
+            <td>{{ materia.u2 }}</td>
+            <td>{{ materia.u3 }}</td>
+            <td>{{ materia.u4 }}</td>
+            <td>{{ materia.u5 }}</td>
+            <td>{{ materia.promedio }}</td>
+            <td>{{ materia.status }}</td>
+            {% if materia.promedio >= 75 %}
                 <td><a href="{% url 'notesedit' materia.id %}">Editar</a></td>
             {% else %}
                 <td><a style="color:white;" href="{% url 'notesedit' materia.id %}">Editar</a></td>

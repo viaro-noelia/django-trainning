@@ -3,27 +3,27 @@
 {% block content %}
 <form action="" method="POST">
     {% csrf_token %}
-    <h5 class="card-title">Alumno: {{data.alumno}}</h5>
-    <h5 class="card-title">Clase: {{data.clase}}</h5>
+    <h5 class="card-title">Alumno: {{ data.alumno }}</h5>
+    <h5 class="card-title">Clase: {{ data.clase }}</h5>
     <div class="input-group mb-3">
         <span class="input-group-text">U1</span>
-        <input type="number" value={{data.u1}} id='u1' name='u1' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="number" value={{ data.u1 }} id='u1' name='u1' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
         <span class="input-group-text">U2</span>
-        <input type="number" value={{data.u2}} id='u2' name='u2' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="number" value={{ data.u2 }} id='u2' name='u2' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
         <span class="input-group-text">U3</span>
-        <input type="number" value={{data.u3}} id='u3' name='u3' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="number" value={{ data.u3 }} id='u3' name='u3' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
         <span class="input-group-text">U4</span>
-        <input type="number" value={{data.u4}} id='u4' name='u4' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="number" value={{ data.u4 }} id='u4' name='u4' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
         <span class="input-group-text">U5</span>
-        <input type="number" value={{data.u5}} id='u5' name='u5' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="number" value={{ data.u5 }} id='u5' name='u5' class="form-control" aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <input class='btn btn-primary' type="submit" />
 </form>
