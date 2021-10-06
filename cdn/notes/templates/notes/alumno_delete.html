@@ -1,0 +1,12 @@
+{% extends "./base.html" %}
+
+{% block content %}
+<h2>Eliminar alumno</h2>
+<form method="post">
+    <div>
+        {% csrf_token %}
+        <p>Estas seguro de eliminar el siguiente alumno: "{{ object }}"?</p>
+        <input class='btn' type="submit" value="Confirm" />
+    </div>
+</form>
+{% endblock %}

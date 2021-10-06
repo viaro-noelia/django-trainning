@@ -7,7 +7,7 @@ html{
     background-color: white;
     height: 100vh;
     width: 100vw;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 main{
     width: 100vw;
@@ -36,7 +36,7 @@ main{
     width: 90%;
     background-color: whitesmoke;
     border: 1px solid black;
-    border-radius: 20px;
+    border-radius: 6px;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -44,8 +44,56 @@ main{
     gap: 2rem;
 }
 
-#table-style{
+.title-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    border: 1px solid rebeccapurple;
+}
+.btn{
+    height: 40px;
+    padding: 5px;
+    font-size: 15px;
+    background-color: seagreen;
+    border: 2px solid rgb(20, 61, 38);
+    border-radius: 10px;
+    color: white;
+    min-width: 120px;
 }
 
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(67, 170, 111);
+}
+
+.home-button{
+    margin-left: 50px;
+}
+
+#printTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}  
+#printTable td, #printTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#printTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#printTable tr:hover {background-color: #ddd;}
+
+#printTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+.title-page{
+    margin-left: 50px;
+}
+.items-links{
+    margin-right: 50px;
+}

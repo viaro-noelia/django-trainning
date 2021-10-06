@@ -1,0 +1,37 @@
+{% extends 'notes/base.html' %}
+{% load static %}
+
+{%block content%}
+<div class="title-container">
+<h2>Alumnos</h2>
+<button id="imprimir" class='btn'>Print me</button>
+<a href="{% url 'alumnocreate' %}"><button class="btn">Agregar Alumno</button></a>
+</div>
+<table id='general-table' style="width: 100%;">
+    <tr style="color: white;">
+        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Nombre</th>
+        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Clase</th>
+        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Unidad 1</th>
+        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Unidad 2</th>
+        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Unidad 3</th>
+        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Unidad 4</th>
+        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Unidad 5</th>
+        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Promedio</th>
+        <th style="border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #04AA6D;">Estado</th>
+    </tr>
+    {% for alumno in alumnos%}
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.name}}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.clase}}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.u1}}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.u2}}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.u3}}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.u4}}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.u5}}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.promedio}}</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: left;">{{alumno.status}}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% comment %} <img src="{% static 'images/shinobu.jpg'%}" {% endcomment %}
+{% endblock %}

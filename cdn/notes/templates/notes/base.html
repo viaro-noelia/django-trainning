@@ -7,16 +7,21 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Django App</title>
+        
     </head>
     <body>
         <main>
             <div id="topbar">
-                <div>
-                </div>
-                <div>
+                <div class='title-page'>
                     <h2>Control de notas</h2>
                 </div>
-                <div>
+                <div class='items-links'>
+                    <a class='home-button' href="/">
+                        Principal
+                    </a>
+                    <a class='home-button' href="/general">
+                        General
+                    </a>
                 </div>
             </div>
             <div id="container">
@@ -27,4 +32,6 @@
             </div>
         </main>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script> 
 </html>
